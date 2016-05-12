@@ -1,6 +1,6 @@
 # neo4j-alert
 
-Regularly emit request to a neo4j and send message when the data changes
+Regularly emit request to a neo4j base and send messages when the data changes
 Runs on node.js, using mongoDB and neo4j
 
 This is just a proof of concept made for fun
