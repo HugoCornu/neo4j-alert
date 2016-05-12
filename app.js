@@ -18,7 +18,7 @@ var addHash = function(cypherResponse){
 // the Hash will be used later to test equality
   cypherResponse.hash = hash(cypherResponse.records)
   cypherResponse.date = new Date()
-  return cypherResponse
+  return cypherResponse;
 }
 
 var testChange = function(cypherResponse) {
@@ -33,7 +33,7 @@ var testChange = function(cypherResponse) {
         if (err !== null) return reject(err);
         cypherResponse.hasChanged = !(docs[0] && (docs[0].hash === cypherResponse.hash));
         db.close();
-        resolve(cypherResponse)
+        resolve(cypherResponse);
       })
     });
   });
@@ -57,7 +57,7 @@ var mInsertPromise = function(record) {
 
 var changeAlert= function(){
 // Function called to notify a change in the data
-  console.log('The data has changed')
+  console.log('The data has changed');
   // here you could plug an emailing feature
 }
 
@@ -73,18 +73,18 @@ var checkCypher = function(cypher,done) {
     .then(testChange)
     .then(function(response) {
       if (response.hasChanged) {
-        changeAlert()
-        return mInsertPromise(response)
+        changeAlert();
+        return mInsertPromise(response);
       } else {
         console.log('no change');
-        return 'no change'
+        return 'no change';
       }
     })
     .then(function() {
       nSession.close();
       done();
     })
-    .catch(console.log)
+    .catch(console.log);
 };
 
 
@@ -100,5 +100,5 @@ agenda.define('checking cypher', {priority: 'high', concurrency: 10}, function(j
 agenda.on('ready', function() {
 // Start looping
   agenda.every(config.checkFrequency, 'checking cypher', {cypher: config.cypher});
-  checkCypher(config.cypher,agenda.start)
+  checkCypher(config.cypher,agenda.start);
 });
