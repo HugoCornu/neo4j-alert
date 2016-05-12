@@ -1,0 +1,10 @@
+{
+  "mongoConnectionString" : "mongodb://127.0.0.1/agenda",
+  "cypher" : "cypher query must contain a RETURN statement",
+  "neo4j" : { 
+    "path": "bolt://localhost",
+    "login": "neo4j", 
+    "pwd": "password"
+  },
+  "checkFrequency" : "3 seconds"
+}

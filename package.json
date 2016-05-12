@@ -1,0 +1,19 @@
+{
+  "name": "neo4j-alert",
+  "version": "1.0.0",
+  "description": "loop a cypher request and send email if the data changes",
+  "main": "app.js",
+  "dependencies": {
+    "agenda": "^0.8.1",
+    "console-stamp": "^0.2.2",
+    "mongodb": "^2.1.18",
+    "neo4j-driver": "^1.0.0",
+    "object-hash": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
